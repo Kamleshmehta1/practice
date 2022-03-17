@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Navcomponent from './Components/Navcomponent';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MyComponent from './Components/MyComponent';
+import Hellow from './Components/Hellow';
+import HOC from './Components/HOC';
+import Nopage from './Components/Nopage';
 
 function App() {
+9978612331 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navcomponent />} />
+          <Route path="/contact/:id" element={<MyComponent />} />
+          <Route path="hellow" element={<HOC component={Hellow} />} />
+          <Route path="*" element={<Nopage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
